@@ -37,7 +37,9 @@ final class TermScore
         return $this->score;
     }
 
-    #[ArrayShape(['term' => "string", 'score' => "float"])]
+    /**
+     * @return array{term: string, score: float}
+     */
     public function asArray(): array
     {
         return [

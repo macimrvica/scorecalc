@@ -50,7 +50,7 @@ final class GitHubTermScoreController extends AbstractController
      */
     public function getTermScore(string $term, CacheInterface $githubScorecalcCache): JsonResponse
     {
-        $cacheResult = $githubScorecalcCache->get($term, function (ItemInterface $item) use ($term, $githubScorecalcCache) {
+        $cacheResult = $githubScorecalcCache->get($term, function (ItemInterface $item) use ($term) {
             $termScoreResultValue = $this->termScoreCalculator->calculateScoreForTerm($term);
             $termScore = TermScore::fromTermScoreResultValue($termScoreResultValue);
 

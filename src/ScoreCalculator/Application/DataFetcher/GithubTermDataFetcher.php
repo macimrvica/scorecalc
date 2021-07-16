@@ -44,7 +44,7 @@ final class GithubTermDataFetcher implements TermScoreDataFetcherInterface
     /**
      * @throws InvalidGithubData
      */
-    private function fetchDataForTerm(string $term): int|Exception
+    private function fetchDataForTerm(string $term): int
     {
         try {
             $response = $this->httpClient->request('GET', self::SEARCH_ISSUES_URI, [

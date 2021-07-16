@@ -13,7 +13,7 @@ use Symfony\Contracts\HttpClient\Exception\HttpExceptionInterface;
 
 final class SymfonyExceptionListener
 {
-    public function onKernelException(ExceptionEvent $event)
+    public function onKernelException(ExceptionEvent $event): void
     {
         $response = $this->createApiResponse($event->getThrowable());
         $event->setResponse($response);
